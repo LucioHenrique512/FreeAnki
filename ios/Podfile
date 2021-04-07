@@ -12,6 +12,8 @@ target 'FreeAnki' do
     :hermes_enabled => false
   )
 
+  pod 'RNI18n', :path => '../node_modules/react-native-i18n'
+
   target 'FreeAnkiTests' do
     inherit! :complete
     # Pods for testing
