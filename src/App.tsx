@@ -9,7 +9,7 @@ const App = () => {
   return (
     <ThemeProvider theme={light}>
       <Container>
-        <StatusBar barStyle="default" animated />
+        <StatusBar barStyle="default" animated backgroundColor="#6C5CE7" />
         <Routes />
       </Container>
     </ThemeProvider>
