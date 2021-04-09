@@ -20,6 +20,7 @@ interface TextProps {
   textAlign?: 'left' | 'center' | 'right';
   marginTop?: number;
   marginBottom?: number;
+  textDecoration?: 'underline' | 'none';
 }
 
 export const Text = (props: TextProps) => (
@@ -31,6 +32,8 @@ const StyledText = styled.Text<TextProps>`
   font-weight: ${({fontWeight}) => (fontWeight ? fontWeight : 500)};
   margin-top: ${({marginTop}) => (marginTop ? marginTop : 0)}px;
   margin-bottom: ${({marginBottom}) => (marginBottom ? marginBottom : 0)}px;
+  text-decoration: ${({textDecoration}) =>
+    textDecoration ? textDecoration : 'none'};
   color: ${({color, secondary, theme}) =>
     secondary ? theme.secondary_text : color ? color : theme.primary_text};
 `;

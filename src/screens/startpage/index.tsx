@@ -18,7 +18,7 @@ import {localizedText} from '../../texts';
 
 export const StartPage = () => {
   const [toggleAnim, setToggleAnim] = useState(false);
-  const animatedHeight = useSharedValue(0.4);
+  const animatedHeight = useSharedValue(0.45);
 
   const imageAnimatedStyle = useAnimatedStyle(() => ({
     height: withTiming(SCREEN_HEIGHT * (1 - animatedHeight.value), {
@@ -32,7 +32,7 @@ export const StartPage = () => {
 
   const testAnimation = () => {
     setToggleAnim(!toggleAnim);
-    animatedHeight.value = toggleAnim ? 0.6 : 0.4;
+    animatedHeight.value = toggleAnim ? 0.6 : 0.45;
   };
 
   return (
@@ -60,6 +60,13 @@ export const StartPage = () => {
         <Button
           text={localizedText('startScreen.steps.start.button')}
           onPress={testAnimation}
+        />
+        <Button
+          text={localizedText('startScreen.steps.start.link')}
+          onPress={testAnimation}
+          linkStyle
+          underline
+          marginTop={15}
         />
       </BottomContainer>
     </Container>
