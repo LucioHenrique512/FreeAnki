@@ -14,6 +14,7 @@ import {
   useAnimatedStyle,
   withTiming,
 } from 'react-native-reanimated';
+import {localizedText} from '../../texts';
 
 export const StartPage = () => {
   const [toggleAnim, setToggleAnim] = useState(false);
@@ -44,19 +45,22 @@ export const StartPage = () => {
       <BottomContainer style={[bottomAnimatedStyle]}>
         <Text
           size={fontScale(20)}
-          text="Use your smartphone to help you learn new things."
+          text={localizedText('startScreen.steps.start.title')}
           textAlign="left"
           fontWeight="bold"
           marginBottom={verticalScale(22)}
         />
         <Text
           size={fontScale(12)}
-          text="Freeanki can help you fix knowledge in your long-term memory."
+          text={localizedText('startScreen.steps.start.subtitle')}
           textAlign="left"
           secondary
           marginBottom={verticalScale(22)}
         />
-        <Button text="TESTE" onPress={testAnimation} />
+        <Button
+          text={localizedText('startScreen.steps.start.button')}
+          onPress={testAnimation}
+        />
       </BottomContainer>
     </Container>
   );
