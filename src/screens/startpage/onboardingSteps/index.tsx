@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 import {Sizes} from '../../../commons';
 
 import {GreetingsStepView} from './greetings';
+import {LoginView} from './login';
 
 const OnboardingSteps = () => {
   const scrollViewRef = useRef<any>(null);
@@ -17,14 +18,10 @@ const OnboardingSteps = () => {
 
   return (
     <Container ref={scrollViewRef} horizontal scrollEnabled={false}>
+      <LoginView />
       <GreetingsStepView
         onButtonPress={() => {
           scrollTo(Sizes.SCREEN_WIDTH);
-        }}
-      />
-      <GreetingsStepView
-        onButtonPress={() => {
-          scrollTo(-Sizes.SCREEN_WIDTH);
         }}
       />
     </Container>
