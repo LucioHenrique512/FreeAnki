@@ -35,7 +35,6 @@ export const BottomContainer = styled(Animated.View)`
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   elevation: 100;
-  padding: 25px;
 `;
 
 const CIRCLE_SIZE = verticalScale(877);

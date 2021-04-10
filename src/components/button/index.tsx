@@ -7,7 +7,7 @@ interface ButtonProps {
   text: string;
   secondary?: boolean;
   color?: string;
-  onPress: any;
+  onPress?: any;
   marginTop?: number;
   marginBottom?: number;
   width?: number;
