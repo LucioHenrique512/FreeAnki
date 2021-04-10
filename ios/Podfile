@@ -12,7 +12,18 @@ target 'FreeAnki' do
     :hermes_enabled => false
   )
 
+
+  pod 'RNCMaskedView', :path => '../node_modules/@react-native-community/masked-view'
+
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
   pod 'RNI18n', :path => '../node_modules/react-native-i18n'
+
+  pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
+
+  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+
+  pod 'RNScreens', :path => '../node_modules/react-native-screens'
 
   target 'FreeAnkiTests' do
     inherit! :complete
