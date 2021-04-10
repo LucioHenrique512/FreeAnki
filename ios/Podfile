@@ -27,6 +27,8 @@ target 'FreeAnki' do
 
   pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
 
+  pod 'react-native-flipper', :path => '../node_modules/react-native-flipper'
+
   target 'FreeAnkiTests' do
     inherit! :complete
     # Pods for testing

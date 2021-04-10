@@ -7,6 +7,11 @@ import rootReducer from '../reducers';
 
 const middlewares = [thunk];
 
+if (__DEV__) {
+  const createDebugger = require('redux-flipper').default;
+  middlewares.push(createDebugger());
+}
+
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,

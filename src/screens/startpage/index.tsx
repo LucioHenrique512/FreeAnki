@@ -16,10 +16,13 @@ import {
 } from 'react-native-reanimated';
 import {localizedText} from '../../texts';
 import {consoleLog} from '../../utils';
+import {onboardingActions} from '../../actions';
+import {useDispatch} from 'react-redux';
 
 export const StartPage = () => {
-  const [toggleAnim, setToggleAnim] = useState(false);
+  const {changeStep} = onboardingActions;
   const animatedHeight = useSharedValue(0.45);
+  const dispatch = useDispatch();
 
   const imageAnimatedStyle = useAnimatedStyle(() => ({
     height: withTiming(SCREEN_HEIGHT * (1 - animatedHeight.value), {
@@ -34,7 +37,8 @@ export const StartPage = () => {
   const testAnimation = () => {
     // setToggleAnim(!toggleAnim);
     // animatedHeight.value = toggleAnim ? 0.6 : 0.45;
-    consoleLog('RN-LOG', 'Apertei');
+    //consoleLog('RN-LOG', 'Apertei');
+    dispatch(changeStep('GREETINGS'));
   };
 
   return (
