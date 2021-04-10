@@ -15,7 +15,7 @@ import {
   withTiming,
 } from 'react-native-reanimated';
 import {localizedText} from '../../texts';
-import {consoleLogger} from '../../utils';
+import {consoleLog} from '../../utils';
 
 export const StartPage = () => {
   const [toggleAnim, setToggleAnim] = useState(false);
@@ -34,7 +34,7 @@ export const StartPage = () => {
   const testAnimation = () => {
     // setToggleAnim(!toggleAnim);
     // animatedHeight.value = toggleAnim ? 0.6 : 0.45;
-    consoleLogger('RN-LOG', 'Apertei');
+    consoleLog('RN-LOG', 'Apertei');
   };
 
   return (
