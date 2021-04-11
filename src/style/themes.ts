@@ -5,6 +5,7 @@ export interface ThemeType {
   foreground: string;
   primary_text: string;
   secondary_text: string;
+  text_input: string;
 }
 
 export const light: ThemeType = {
@@ -14,6 +15,7 @@ export const light: ThemeType = {
   foreground: '#FFFFFF',
   primary_text: '#0D1346',
   secondary_text: '#8F8F8F',
+  text_input: '#F0F0F0',
 };
 
 export const dark: ThemeType = {
@@ -23,4 +25,5 @@ export const dark: ThemeType = {
   foreground: '#222222',
   primary_text: '#FFFFFF',
   secondary_text: '#8F8F8F',
+  text_input: '#F0F0F0',
 };

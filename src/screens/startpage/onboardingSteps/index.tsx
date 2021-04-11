@@ -1,11 +1,23 @@
 import React, {useRef} from 'react';
 import styled from 'styled-components/native';
 import {Sizes} from '../../../commons';
+import {useDispatch} from 'react-redux';
+import {onboardingActions} from '../../../actions';
 
 import {GreetingsStepView} from './greetings';
 import {LoginView} from './login';
+import {onboardingSteps} from '../index';
 
-const OnboardingSteps = () => {
+interface OnboardingStepsProps {
+  currentStep?: any;
+  handleStepChange?: any;
+}
+
+const OnboardingSteps = ({
+  currentStep,
+  handleStepChange,
+}: OnboardingStepsProps) => {
+  const dispatch = useDispatch();
   const scrollViewRef = useRef<any>(null);
 
   const scrollTo = (scrollTo: number) => {
@@ -16,14 +28,18 @@ const OnboardingSteps = () => {
     });
   };
 
+  const changeStep = (step: any) => {
+    dispatch(onboardingActions.changeStep(step));
+    handleStepChange(step);
+    scrollTo(step.scrollTo);
+  };
+
   return (
     <Container ref={scrollViewRef} horizontal scrollEnabled={false}>
-      <LoginView />
       <GreetingsStepView
-        onButtonPress={() => {
-          scrollTo(Sizes.SCREEN_WIDTH);
-        }}
+        onButtonPress={() => changeStep(onboardingSteps.LOGIN)}
       />
+      <LoginView onButtonPress={() => changeStep(onboardingSteps.GREETINGS)} />
     </Container>
   );
 };

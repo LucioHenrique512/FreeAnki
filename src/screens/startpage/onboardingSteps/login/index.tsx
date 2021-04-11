@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 import {Sizes} from '../../../../commons';
 import {fontScale, verticalScale} from '../../../../commons/sizes';
-import {Button, Text} from '../../../../components';
+import {Button, Text, TextInput} from '../../../../components';
 import {localizedText} from '../../../../texts';
 
 interface LoginViewProps {
@@ -19,6 +19,14 @@ export const LoginView = ({onButtonPress, onLinkPress}: LoginViewProps) => {
         textAlign="left"
         fontWeight="bold"
         marginBottom={verticalScale(22)}
+      />
+      <TextInput
+        placeholder={localizedText('startScreen.steps.login.username')}
+        marginBottom={20}
+      />
+      <TextInput
+        placeholder={localizedText('startScreen.steps.login.password')}
+        marginBottom={20}
       />
 
       <Button

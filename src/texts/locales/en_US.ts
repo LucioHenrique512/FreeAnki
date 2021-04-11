@@ -10,7 +10,7 @@ const startScreen = {
     },
     login: {
       title: 'Hello, Wellcome back!',
-      username: 'Psername',
+      username: 'Username or Password',
       password: 'Password',
       button: 'SIGNIN',
       link: "I don't have an account, sign up now!",
@@ -19,7 +19,7 @@ const startScreen = {
 };
 
 const en_US: Locales = {
-  startScreen,
+  startScreen: startScreen,
 };
 
 export default en_US;

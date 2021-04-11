@@ -3,7 +3,7 @@ import {Sizes} from '../../commons';
 import {verticalScale} from '../../commons/sizes';
 import Animated from 'react-native-reanimated';
 
-export const Container = styled.View`
+export const Container = styled.KeyboardAvoidingView`
   height: ${Sizes.SCREEN_HEIGHT}px;
   width: ${Sizes.SCREEN_WIDTH}px;
   background: ${({theme}) => theme.primary};

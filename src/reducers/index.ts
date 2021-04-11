@@ -7,4 +7,8 @@ export interface ActionType {
 
 import {onboarding} from './onboarding';
 
-export default combineReducers({onboarding});
+const reducers = {onboarding};
+
+export type StoreType = typeof reducers;
+
+export default combineReducers(reducers);

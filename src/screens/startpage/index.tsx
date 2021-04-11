@@ -15,37 +15,50 @@ import {
   withTiming,
 } from 'react-native-reanimated';
 import {onboardingActions} from '../../actions';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import OnboardingSteps from './onboardingSteps';
+import {OnboardingStateType} from '../../reducers/onboarding';
+import {StoreType} from '../../reducers';
+import {Sizes} from '../../commons';
+
+export const onboardingSteps = {
+  GREETINGS: {stepId: 'GREETINGS', height: 0.45, scrollTo: 0},
+  LOGIN: {stepId: 'LOGIN', height: 0.58, scrollTo: Sizes.SCREEN_WIDTH},
+};
 
 export const StartPage = () => {
-  const {changeStep} = onboardingActions;
   const animatedHeight = useSharedValue(0.45);
-  const dispatch = useDispatch();
+  const {currentStep}: any = useSelector(
+    (store: StoreType) => store.onboarding,
+  );
 
   const imageAnimatedStyle = useAnimatedStyle(() => ({
     height: withTiming(SCREEN_HEIGHT * (1 - animatedHeight.value), {
-      duration: 300,
+      duration: 400,
     }),
   }));
 
   const bottomAnimatedStyle = useAnimatedStyle(() => ({
-    height: withTiming(SCREEN_HEIGHT * animatedHeight.value, {duration: 300}),
+    height: withTiming(SCREEN_HEIGHT * animatedHeight.value, {duration: 400}),
   }));
 
-  const testAnimation = () => {
-    dispatch(changeStep('GREETINGS'));
+  const handleStepChange = (step: any) => {
+    console.log(step);
+    animatedHeight.value = step.height;
   };
 
   return (
-    <Container>
+    <Container behavior="height">
       <BackgroundCircle1 />
       <BackgroundCircle2 />
       <ImageContainer style={[imageAnimatedStyle]}>
         <Image source={require('../../assets/onboard/stydyman/studyman.png')} />
       </ImageContainer>
       <BottomContainer style={[bottomAnimatedStyle]}>
-        <OnboardingSteps />
+        <OnboardingSteps
+          currentStep={currentStep}
+          handleStepChange={handleStepChange}
+        />
       </BottomContainer>
     </Container>
   );
