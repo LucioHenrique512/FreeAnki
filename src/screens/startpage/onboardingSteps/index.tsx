@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import styled from 'styled-components/native';
 import {Sizes} from '../../../commons';
 import {useDispatch} from 'react-redux';
@@ -7,6 +7,7 @@ import {onboardingActions} from '../../../actions';
 import {GreetingsStepView} from './greetings';
 import {LoginView} from './login';
 import {onboardingSteps} from '../index';
+import {SignupStep} from './signup';
 
 interface OnboardingStepsProps {
   currentStep?: any;
@@ -28,18 +29,42 @@ const OnboardingSteps = ({
     });
   };
 
+  useEffect(() => {
+    scrollTo(currentStep?.scrollTo);
+  }, [currentStep, scrollTo]);
+
   const changeStep = (step: any) => {
     dispatch(onboardingActions.changeStep(step));
     handleStepChange(step);
-    scrollTo(step.scrollTo);
+  };
+
+  const renderNextStep = (step: any) => {
+    //console.log('STEP', step);
+    switch (step?.stepId) {
+      case onboardingSteps.LOGIN.stepId:
+        return (
+          <LoginView
+            onButtonPress={() => changeStep(onboardingSteps.GREETINGS)}
+            onLinkPress={() => changeStep(onboardingSteps.SIGNUP)}
+          />
+        );
+      case onboardingSteps.SIGNUP.stepId:
+        return (
+          <SignupStep
+            onSignupPress={() => changeStep(onboardingSteps.GREETINGS)}
+            onLinkPress={() => changeStep(onboardingSteps.LOGIN)}
+          />
+        );
+    }
   };
 
   return (
-    <Container ref={scrollViewRef} horizontal scrollEnabled={false}>
+    <Container ref={scrollViewRef} horizontal scrollEnabled={true}>
       <GreetingsStepView
-        onButtonPress={() => changeStep(onboardingSteps.LOGIN)}
+        onButtonPress={() => changeStep(onboardingSteps.SIGNUP)}
+        onLinkPress={() => changeStep(onboardingSteps.LOGIN)}
       />
-      <LoginView onButtonPress={() => changeStep(onboardingSteps.GREETINGS)} />
+      {renderNextStep(currentStep)}
     </Container>
   );
 };

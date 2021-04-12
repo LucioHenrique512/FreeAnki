@@ -10,10 +10,19 @@ const startScreen = {
     },
     login: {
       title: 'Hello, Wellcome back!',
-      username: 'Username or Password',
+      username: 'Username or Email',
       password: 'Password',
       button: 'SIGNIN',
       link: "I don't have an account, sign up now!",
+    },
+    signup: {
+      title: 'Hello,\nSign up to get start!',
+      username: 'Username',
+      email: 'Email',
+      password: 'Password',
+      confirmPassword: 'Confirme Password',
+      button: 'SIGNUP',
+      link: 'I already have a user account, sign in now!',
     },
   },
 };

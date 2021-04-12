@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {fontScale, SCREEN_HEIGHT, verticalScale} from '../../commons/sizes';
 import {Button, Text} from '../../components';
 import {
@@ -24,13 +24,20 @@ import {Sizes} from '../../commons';
 export const onboardingSteps = {
   GREETINGS: {stepId: 'GREETINGS', height: 0.45, scrollTo: 0},
   LOGIN: {stepId: 'LOGIN', height: 0.58, scrollTo: Sizes.SCREEN_WIDTH},
+  SIGNUP: {stepId: 'SIGNUP', height: 0.81, scrollTo: Sizes.SCREEN_WIDTH},
 };
 
 export const StartPage = () => {
   const animatedHeight = useSharedValue(0.45);
+
   const {currentStep}: any = useSelector(
     (store: StoreType) => store.onboarding,
   );
+
+  useEffect(() => {
+    currentStep && (animatedHeight.value = currentStep?.height);
+    //onsole.log(currentStep);
+  }, [currentStep]);
 
   const imageAnimatedStyle = useAnimatedStyle(() => ({
     height: withTiming(SCREEN_HEIGHT * (1 - animatedHeight.value), {
@@ -43,8 +50,7 @@ export const StartPage = () => {
   }));
 
   const handleStepChange = (step: any) => {
-    console.log(step);
-    animatedHeight.value = step.height;
+    //console.log(step);
   };
 
   return (

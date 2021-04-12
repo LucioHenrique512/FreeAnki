@@ -33,6 +33,7 @@ export const LoginView = ({onButtonPress, onLinkPress}: LoginViewProps) => {
         onPress={onButtonPress}
         text={localizedText('startScreen.steps.login.button')}
       />
+
       <Button
         text={localizedText('startScreen.steps.login.link')}
         linkStyle

@@ -13,7 +13,7 @@ export const onboarding = (state = INIT_STATE, action: ActionType) => {
     case ONBOARDING_CHANGE_STEP:
       return {
         ...state,
-        step: action.payload,
+        currentStep: action.payload,
       };
     default:
       return state;
