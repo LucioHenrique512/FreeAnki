@@ -12,29 +12,6 @@ target 'FreeAnki' do
     :hermes_enabled => false
   )
 
-
-  pod 'RNCMaskedView', :path => '../node_modules/@react-native-community/masked-view'
-
-  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
-
-  pod 'RNI18n', :path => '../node_modules/react-native-i18n'
-
-  pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
-
-  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
-
-  pod 'RNScreens', :path => '../node_modules/react-native-screens'
-
-  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
-
-  pod 'react-native-flipper', :path => '../node_modules/react-native-flipper'
-
-  pod 'appcenter-core', :path => '../node_modules/appcenter'
-
-  pod 'appcenter-analytics', :path => '../node_modules/appcenter-analytics'
-
-  pod 'appcenter-crashes', :path => '../node_modules/appcenter-crashes'
-
   target 'FreeAnkiTests' do
     inherit! :complete
     # Pods for testing
