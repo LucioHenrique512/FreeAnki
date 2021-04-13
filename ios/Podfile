@@ -29,6 +29,12 @@ target 'FreeAnki' do
 
   pod 'react-native-flipper', :path => '../node_modules/react-native-flipper'
 
+  pod 'appcenter-core', :path => '../node_modules/appcenter'
+
+  pod 'appcenter-analytics', :path => '../node_modules/appcenter-analytics'
+
+  pod 'appcenter-crashes', :path => '../node_modules/appcenter-crashes'
+
   target 'FreeAnkiTests' do
     inherit! :complete
     # Pods for testing
