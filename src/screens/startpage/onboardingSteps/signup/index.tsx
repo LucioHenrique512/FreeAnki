@@ -21,6 +21,10 @@ export const SignupStep = ({onSignupPress, onLinkPress}: SignupStepProps) => {
         marginBottom={verticalScale(30)}
       />
       <TextInput
+        placeholder={localizedText('startScreen.steps.signup.name')}
+        marginBottom={20}
+      />
+      <TextInput
         placeholder={localizedText('startScreen.steps.signup.username')}
         marginBottom={20}
       />
@@ -43,7 +47,7 @@ export const SignupStep = ({onSignupPress, onLinkPress}: SignupStepProps) => {
       />
 
       <Button
-        text={localizedText('startScreen.steps.greetings.link')}
+        text={localizedText('startScreen.steps.signup.link')}
         linkStyle
         underline
         onPress={onLinkPress}

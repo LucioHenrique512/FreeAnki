@@ -16,6 +16,16 @@ const startScreen = {
       button: 'ENTRAR',
       link: 'Não tenho uma conta, criar uma agora!',
     },
+    signup: {
+      title: 'Olá, \nInscreva-se para começar!',
+      name: 'Nome completo',
+      username: 'Usuário',
+      email: 'Email',
+      password: 'Senha',
+      confirmPassword: 'Confirmação de senha',
+      button: 'INSCREVER',
+      link: 'Já tenho uma conta, entrar agora!',
+    },
   },
 };
 

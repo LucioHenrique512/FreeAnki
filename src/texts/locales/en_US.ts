@@ -17,6 +17,7 @@ const startScreen = {
     },
     signup: {
       title: 'Hello,\nSign up to get start!',
+      name: 'Full name',
       username: 'Username',
       email: 'Email',
       password: 'Password',
