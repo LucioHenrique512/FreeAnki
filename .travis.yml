@@ -1,0 +1,16 @@
+os: linux
+language: android
+jdk: oraclejdk8
+android:
+  components:
+    - build-tools-29.0.3
+    - android-29
+before_install:
+  - yes | sdkmanager "platforms;android-29"
+  - yes | sdkmanager "build-tools;29.0.3"
+  - nvm install && nvm use
+  - npm install -g "npm@$(jq -r '.engines.npm' package.json)"
+install:
+  - npm ci
+script:
+  - './android/gradlew assembleRelease -x lintVitalRelease -p android/'
