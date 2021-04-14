@@ -1,53 +1,49 @@
+import {TFunction} from 'i18next';
 import React from 'react';
 import styled from 'styled-components/native';
 import {Sizes} from '../../../../commons';
 import {fontScale, verticalScale} from '../../../../commons/sizes';
 import {Button, Text, TextInput} from '../../../../components';
-import {localizedText} from '../../../../texts';
 
 interface SignupStepProps {
   onSignupPress?: any;
   onLinkPress?: any;
+  translator: TFunction;
 }
 
-export const SignupStep = ({onSignupPress, onLinkPress}: SignupStepProps) => {
+export const SignupStep = ({
+  onSignupPress,
+  onLinkPress,
+  translator,
+}: SignupStepProps) => {
   return (
     <Container>
       <Text
         size={fontScale(20)}
-        text={localizedText('startScreen.steps.signup.title')}
+        text={translator('signup.title')}
         textAlign="left"
         fontWeight="bold"
         marginBottom={verticalScale(30)}
       />
+      <TextInput placeholder={translator('signup.name')} marginBottom={20} />
       <TextInput
-        placeholder={localizedText('startScreen.steps.signup.name')}
+        placeholder={translator('signup.username')}
+        marginBottom={20}
+      />
+      <TextInput placeholder={translator('signup.email')} marginBottom={20} />
+      <TextInput
+        placeholder={translator('signup.password')}
         marginBottom={20}
       />
       <TextInput
-        placeholder={localizedText('startScreen.steps.signup.username')}
-        marginBottom={20}
-      />
-      <TextInput
-        placeholder={localizedText('startScreen.steps.signup.email')}
-        marginBottom={20}
-      />
-      <TextInput
-        placeholder={localizedText('startScreen.steps.signup.password')}
-        marginBottom={20}
-      />
-      <TextInput
-        placeholder={localizedText('startScreen.steps.signup.confirmPassword')}
+        placeholder={translator('signup.confirmPassword')}
         marginBottom={40}
       />
 
-      <Button
-        onPress={onSignupPress}
-        text={localizedText('startScreen.steps.signup.button')}
-      />
+      <Button onPress={onSignupPress} text={translator('signup.button')} />
 
       <Button
-        text={localizedText('startScreen.steps.signup.link')}
+        text={translator('signup.link')}
         linkStyle
         underline
         onPress={onLinkPress}

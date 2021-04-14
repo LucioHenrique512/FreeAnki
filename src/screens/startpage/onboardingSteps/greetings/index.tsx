@@ -1,41 +1,40 @@
+import {TFunction} from 'i18next';
 import React from 'react';
 import styled from 'styled-components/native';
 import {Sizes} from '../../../../commons';
 import {fontScale, verticalScale} from '../../../../commons/sizes';
 import {Button, Text} from '../../../../components';
-import {localizedText} from '../../../../texts';
 
 interface GreetingsStepViewProps {
   onButtonPress?: any;
   onLinkPress?: any;
+  translator: TFunction;
 }
 
 export const GreetingsStepView = ({
   onButtonPress,
   onLinkPress,
+  translator,
 }: GreetingsStepViewProps) => {
   return (
     <Container>
       <Text
         size={fontScale(20)}
-        text={localizedText('startScreen.steps.greetings.title')}
+        text={translator('greetings.title')}
         textAlign="left"
         fontWeight="bold"
         marginBottom={verticalScale(22)}
       />
       <Text
         size={fontScale(12)}
-        text={localizedText('startScreen.steps.greetings.subtitle')}
+        text={translator('greetings.subtitle')}
         textAlign="left"
         secondary
         marginBottom={verticalScale(22)}
       />
+      <Button onPress={onButtonPress} text={translator('greetings.button')} />
       <Button
-        onPress={onButtonPress}
-        text={localizedText('startScreen.steps.greetings.button')}
-      />
-      <Button
-        text={localizedText('startScreen.steps.greetings.link')}
+        text={translator('greetings.link')}
         linkStyle
         underline
         onPress={onLinkPress}

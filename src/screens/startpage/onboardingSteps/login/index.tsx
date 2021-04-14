@@ -1,41 +1,37 @@
+import {TFunction} from 'i18next';
 import React from 'react';
 import styled from 'styled-components/native';
 import {Sizes} from '../../../../commons';
 import {fontScale, verticalScale} from '../../../../commons/sizes';
 import {Button, Text, TextInput} from '../../../../components';
-import {localizedText} from '../../../../texts';
 
 interface LoginViewProps {
   onButtonPress?: any;
   onLinkPress?: any;
+  translator: TFunction;
 }
 
-export const LoginView = ({onButtonPress, onLinkPress}: LoginViewProps) => {
+export const LoginView = ({
+  onButtonPress,
+  onLinkPress,
+  translator,
+}: LoginViewProps) => {
   return (
     <Container>
       <Text
         size={fontScale(20)}
-        text={localizedText('startScreen.steps.login.title')}
+        text={translator('login.title')}
         textAlign="left"
         fontWeight="bold"
         marginBottom={verticalScale(22)}
       />
-      <TextInput
-        placeholder={localizedText('startScreen.steps.login.username')}
-        marginBottom={20}
-      />
-      <TextInput
-        placeholder={localizedText('startScreen.steps.login.password')}
-        marginBottom={20}
-      />
+      <TextInput placeholder={translator('login.username')} marginBottom={20} />
+      <TextInput placeholder={translator('login.password')} marginBottom={20} />
+
+      <Button onPress={onButtonPress} text={translator('login.button')} />
 
       <Button
-        onPress={onButtonPress}
-        text={localizedText('startScreen.steps.login.button')}
-      />
-
-      <Button
-        text={localizedText('startScreen.steps.login.link')}
+        text={translator('login.link')}
         linkStyle
         underline
         onPress={onLinkPress}

@@ -8,15 +8,18 @@ import {GreetingsStepView} from './greetings';
 import {LoginView} from './login';
 import {onboardingSteps} from '../index';
 import {SignupStep} from './signup';
+import {TFunction} from 'i18next';
 
 interface OnboardingStepsProps {
   currentStep?: any;
   handleStepChange?: any;
+  translator: TFunction;
 }
 
 const OnboardingSteps = ({
   currentStep,
   handleStepChange,
+  translator,
 }: OnboardingStepsProps) => {
   const dispatch = useDispatch();
   const scrollViewRef = useRef<any>(null);
@@ -46,6 +49,7 @@ const OnboardingSteps = ({
           <LoginView
             onButtonPress={() => changeStep(onboardingSteps.GREETINGS)}
             onLinkPress={() => changeStep(onboardingSteps.SIGNUP)}
+            translator={translator}
           />
         );
       case onboardingSteps.SIGNUP.stepId:
@@ -53,6 +57,7 @@ const OnboardingSteps = ({
           <SignupStep
             onSignupPress={() => changeStep(onboardingSteps.GREETINGS)}
             onLinkPress={() => changeStep(onboardingSteps.LOGIN)}
+            translator={translator}
           />
         );
     }
@@ -63,6 +68,7 @@ const OnboardingSteps = ({
       <GreetingsStepView
         onButtonPress={() => changeStep(onboardingSteps.SIGNUP)}
         onLinkPress={() => changeStep(onboardingSteps.LOGIN)}
+        translator={translator}
       />
       {renderNextStep(currentStep)}
     </Container>
