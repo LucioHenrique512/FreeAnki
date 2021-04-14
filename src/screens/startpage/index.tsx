@@ -56,7 +56,7 @@ export const StartPage = () => {
   };
 
   return (
-    <Container behavior="height">
+    <Container>
       <BackgroundCircle1 />
       <BackgroundCircle2 />
       <ImageContainer style={[imageAnimatedStyle]}>

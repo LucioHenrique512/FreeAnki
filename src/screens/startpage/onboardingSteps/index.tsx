@@ -67,7 +67,7 @@ const OnboardingSteps = ({
   };
 
   return (
-    <Container ref={scrollViewRef} horizontal scrollEnabled={true}>
+    <Container ref={scrollViewRef} horizontal scrollEnabled={false}>
       <GreetingsStepView
         onButtonPress={() => changeStep(onboardingSteps.SIGNUP)}
         onLinkPress={() => changeStep(onboardingSteps.LOGIN)}
