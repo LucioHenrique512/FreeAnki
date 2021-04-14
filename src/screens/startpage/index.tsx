@@ -14,12 +14,12 @@ import {
   useAnimatedStyle,
   withTiming,
 } from 'react-native-reanimated';
-import {onboardingActions} from '../../actions';
-import {useDispatch, useSelector} from 'react-redux';
+
+import {useSelector} from 'react-redux';
 import OnboardingSteps from './onboardingSteps';
-import {OnboardingStateType} from '../../reducers/onboarding';
 import {StoreType} from '../../reducers';
 import {Sizes} from '../../commons';
+import {useTranslation} from 'react-i18next';
 
 export const onboardingSteps = {
   GREETINGS: {stepId: 'GREETINGS', height: 0.45, scrollTo: 0},
@@ -29,6 +29,7 @@ export const onboardingSteps = {
 
 export const StartPage = () => {
   const animatedHeight = useSharedValue(0.45);
+  const {t} = useTranslation('startpage');
 
   const {currentStep}: any = useSelector(
     (store: StoreType) => store.onboarding,
@@ -64,6 +65,7 @@ export const StartPage = () => {
         <OnboardingSteps
           currentStep={currentStep}
           handleStepChange={handleStepChange}
+          translator={t}
         />
       </BottomContainer>
     </Container>
