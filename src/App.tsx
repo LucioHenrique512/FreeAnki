@@ -9,18 +9,26 @@ import {Provider} from 'react-redux';
 import {persistor, store} from './store';
 import {Text} from './components';
 import './i18n';
+import {AppearanceProvider, useColorScheme} from 'react-native-appearance';
 
 const App = () => {
+  const colorScheme = useColorScheme();
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <ThemeProvider theme={false ? dark : light}>
-          <Container>
-            <StatusBar barStyle="default" animated backgroundColor="#6C5CE7" />
-            <Routes />
-          </Container>
-          <Text />
-        </ThemeProvider>
+        <AppearanceProvider>
+          <ThemeProvider theme={colorScheme === 'dark' ? dark : light}>
+            <Container>
+              <StatusBar
+                barStyle="default"
+                animated
+                backgroundColor="#6C5CE7"
+              />
+              <Routes />
+            </Container>
+            <Text />
+          </ThemeProvider>
+        </AppearanceProvider>
       </PersistGate>
     </Provider>
   );

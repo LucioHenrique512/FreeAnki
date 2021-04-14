@@ -15,6 +15,7 @@ if (__DEV__) {
 
 const persistConfig = {
   key: 'root',
+  blacklist: ['onboarding'],
   storage: AsyncStorage,
 };
 

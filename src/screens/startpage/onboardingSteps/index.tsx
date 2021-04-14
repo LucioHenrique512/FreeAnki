@@ -9,6 +9,7 @@ import {LoginView} from './login';
 import {onboardingSteps} from '../index';
 import {SignupStep} from './signup';
 import {TFunction} from 'i18next';
+import {LoadingStep} from './loadingstep';
 
 interface OnboardingStepsProps {
   currentStep?: any;
@@ -47,7 +48,7 @@ const OnboardingSteps = ({
       case onboardingSteps.LOGIN.stepId:
         return (
           <LoginView
-            onButtonPress={() => changeStep(onboardingSteps.GREETINGS)}
+            onButtonPress={() => changeStep(onboardingSteps.LOADING)}
             onLinkPress={() => changeStep(onboardingSteps.SIGNUP)}
             translator={translator}
           />
@@ -60,6 +61,8 @@ const OnboardingSteps = ({
             translator={translator}
           />
         );
+      case onboardingSteps.LOADING.stepId:
+        return <LoadingStep translator={translator} />;
     }
   };
 

@@ -1,14 +1,16 @@
-export interface ThemeType {
-  primary: string;
-  secondary: string;
-  background: string;
-  foreground: string;
-  primary_text: string;
-  secondary_text: string;
-  text_input: string;
-}
+// export interface ThemeType {
+//   primary: string;
+//   secondary: string;
+//   background: string;
+//   foreground: string;
+//   primary_text: string;
+//   secondary_text: string;
+//   text_input: string;
+// }
 
-export const light: ThemeType = {
+export type ThemeType = typeof light;
+
+export const light = {
   primary: '#6C5CE7',
   secondary: '#65CFF4',
   background: '#FAFBFE',
@@ -25,5 +27,5 @@ export const dark: ThemeType = {
   foreground: '#222222',
   primary_text: '#FFFFFF',
   secondary_text: '#8F8F8F',
-  text_input: '#F0F0F0',
+  text_input: '#4E4E4E',
 };

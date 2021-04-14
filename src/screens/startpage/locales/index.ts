@@ -22,6 +22,9 @@ const en_US = {
     button: 'SIGNUP',
     link: 'I already have a user account, sign in now!',
   },
+  loadingstep: {
+    loading: 'Loading...',
+  },
 };
 
 const pt_BR: typeof en_US = {
@@ -48,6 +51,9 @@ const pt_BR: typeof en_US = {
     confirmPassword: 'Confirmação de senha',
     button: 'INSCREVER',
     link: 'Já tenho uma conta, entrar agora!',
+  },
+  loadingstep: {
+    loading: 'Carregando...',
   },
 };
 

@@ -25,6 +25,7 @@ export const onboardingSteps = {
   GREETINGS: {stepId: 'GREETINGS', height: 0.45, scrollTo: 0},
   LOGIN: {stepId: 'LOGIN', height: 0.58, scrollTo: Sizes.SCREEN_WIDTH},
   SIGNUP: {stepId: 'SIGNUP', height: 0.92, scrollTo: Sizes.SCREEN_WIDTH},
+  LOADING: {stepId: 'LOADING', height: 0.23, scrollTo: Sizes.SCREEN_WIDTH},
 };
 
 export const StartPage = () => {

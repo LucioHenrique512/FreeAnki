@@ -9,7 +9,7 @@ const INIT_STATE = {
 export type OnboardingStateType = typeof INIT_STATE;
 
 export const onboarding = (state = INIT_STATE, action: ActionType) => {
-  console.log('ACTION ->', action);
+  //console.log('ACTION ->', action);
   switch (action.type) {
     case ONBOARDING_CHANGE_STEP:
       return {
