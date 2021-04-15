@@ -10,18 +10,25 @@ import {onboardingSteps} from '../index';
 import {SignupStep} from './signup';
 import {TFunction} from 'i18next';
 import {LoadingStep} from './loadingstep';
+import {StartScreenProps} from '../types';
 
 interface OnboardingStepsProps {
   currentStep?: any;
   handleStepChange?: any;
   translator: TFunction;
+  startScreenProps: StartScreenProps;
 }
 
 const OnboardingSteps = ({
   currentStep,
   handleStepChange,
   translator,
+  startScreenProps,
 }: OnboardingStepsProps) => {
+  const {handleLogin}: StartScreenProps = startScreenProps;
+
+  console.log(startScreenProps);
+
   const dispatch = useDispatch();
   const scrollViewRef = useRef<any>(null);
 
@@ -48,7 +55,11 @@ const OnboardingSteps = ({
       case onboardingSteps.LOGIN.stepId:
         return (
           <LoginView
-            onButtonPress={() => changeStep(onboardingSteps.LOADING)}
+            onButtonPress={() => {
+              changeStep(onboardingSteps.LOADING);
+
+              handleLogin();
+            }}
             onLinkPress={() => changeStep(onboardingSteps.SIGNUP)}
             translator={translator}
           />

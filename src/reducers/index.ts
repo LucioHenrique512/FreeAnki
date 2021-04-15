@@ -6,8 +6,9 @@ export interface ActionType {
 }
 
 import {onboarding} from './onboarding';
+import {session} from './session';
 
-const reducers = {onboarding};
+const reducers = {onboarding, session};
 
 export type StoreType = typeof reducers;
 

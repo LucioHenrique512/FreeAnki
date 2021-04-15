@@ -20,6 +20,7 @@ import OnboardingSteps from './onboardingSteps';
 import {StoreType} from '../../reducers';
 import {Sizes} from '../../commons';
 import {useTranslation} from 'react-i18next';
+import {StartScreenProps} from './types';
 
 export const onboardingSteps = {
   GREETINGS: {stepId: 'GREETINGS', height: 0.45, scrollTo: 0},
@@ -28,7 +29,7 @@ export const onboardingSteps = {
   LOADING: {stepId: 'LOADING', height: 0.23, scrollTo: Sizes.SCREEN_WIDTH},
 };
 
-export const StartPage = () => {
+export const StartPage = (props: StartScreenProps) => {
   const animatedHeight = useSharedValue(0.45);
   const {t} = useTranslation('startpage');
 
@@ -67,6 +68,7 @@ export const StartPage = () => {
           currentStep={currentStep}
           handleStepChange={handleStepChange}
           translator={t}
+          startScreenProps={props}
         />
       </BottomContainer>
     </Container>
