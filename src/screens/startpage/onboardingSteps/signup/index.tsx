@@ -18,10 +18,7 @@ export const SignupStep = ({
   translator,
 }: SignupStepProps) => {
   return (
-    <Container
-      behavior="height"
-      keyboardVerticalOffset={verticalScale(90)}
-      enabled>
+    <Container>
       <StyledScrollView>
         <InputContainer>
           <Text
@@ -33,10 +30,6 @@ export const SignupStep = ({
           />
           <TextInput
             placeholder={translator('signup.name')}
-            marginBottom={20}
-          />
-          <TextInput
-            placeholder={translator('signup.username')}
             marginBottom={20}
           />
           <TextInput
@@ -73,7 +66,7 @@ const Container = styled.KeyboardAvoidingView`
   padding: 25px;
   flex: 1;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 `;
 
 const StyledScrollView = styled.ScrollView``;
