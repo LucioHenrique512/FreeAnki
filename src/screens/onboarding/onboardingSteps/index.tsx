@@ -27,8 +27,6 @@ const OnboardingSteps = ({
 }: OnboardingStepsProps) => {
   const {handleLogin}: StartScreenProps = startScreenProps;
 
-  console.log(startScreenProps);
-
   const dispatch = useDispatch();
   const scrollViewRef = useRef<any>(null);
 
