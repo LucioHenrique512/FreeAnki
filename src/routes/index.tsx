@@ -6,8 +6,8 @@ import {useSelector} from 'react-redux';
 
 import StartRoute from './startroute';
 import HomeRoute from './homeroute';
-import {StoreType} from '../reducers';
-import {SessionStateType} from '../reducers/session';
+import {StoreType} from '../redux/reducers';
+import {SessionStateType} from '../redux/reducers/session';
 
 const Stack = createStackNavigator();
 

@@ -1,1 +1,1 @@
-export {startpage} from '../screens/startpage/locales';
+export {startpage} from '../screens/onboarding/locales';

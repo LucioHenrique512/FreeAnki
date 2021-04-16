@@ -1,8 +1,8 @@
 import React from 'react';
 import {Home} from '../../screens';
 import {useDispatch} from 'react-redux';
-import {onboardingActions, sessionActions} from '../../actions';
-import {onboardingSteps} from '../../screens/startpage';
+import {onboardingActions, sessionActions} from '../../redux/actions';
+import {onboardingSteps} from '../../screens/onboarding';
 
 const HomeRoute = () => {
   const dispatch = useDispatch();

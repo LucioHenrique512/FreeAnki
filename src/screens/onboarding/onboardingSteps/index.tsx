@@ -2,7 +2,7 @@ import React, {useRef, useState, useEffect} from 'react';
 import styled from 'styled-components/native';
 import {Sizes} from '../../../commons';
 import {useDispatch} from 'react-redux';
-import {onboardingActions} from '../../../actions';
+import {onboardingActions} from '../../../redux/actions';
 
 import {GreetingsStepView} from './greetings';
 import {LoginView} from './login';

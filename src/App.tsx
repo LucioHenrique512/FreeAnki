@@ -6,7 +6,7 @@ import {light, dark} from './style/themes';
 import {ThemeProvider} from 'styled-components/native';
 import {PersistGate} from 'redux-persist/integration/react';
 import {Provider} from 'react-redux';
-import {persistor, store} from './store';
+import {persistor, store} from './redux/store';
 import {Text} from './components';
 import './i18n';
 import {AppearanceProvider, useColorScheme} from 'react-native-appearance';
