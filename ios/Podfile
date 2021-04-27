@@ -16,6 +16,8 @@ target 'FreeAnki' do
 
   pod 'RNFastImage', :path => '../node_modules/react-native-fast-image'
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'FreeAnkiTests' do
     inherit! :complete
     # Pods for testing
