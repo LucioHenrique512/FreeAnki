@@ -10,8 +10,7 @@ interface HomeProps {
 export const Home = ({handleLogOut}: HomeProps) => {
   return (
     <Container>
-      <Header />
-      {/* <Button marginTop={100} text="Logout" onPress={() => handleLogOut()} /> */}
+      <Header onPressSetings={() => handleLogOut()} />
     </Container>
   );
 };

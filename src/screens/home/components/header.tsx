@@ -13,7 +13,11 @@ import {useTheme} from 'styled-components';
 
 const avatarUri = 'https://randomuser.me/api/portraits/women/95.jpg';
 
-export default function Header() {
+interface Header {
+  onPressSetings?: any;
+}
+
+export default function Header({onPressSetings}: Header) {
   const {secondary_text} = useTheme();
   return (
     <Container style={{paddingHorizontal: horizontalScale(20)}}>
@@ -22,7 +26,7 @@ export default function Header() {
         <Text fontWeight="bold" text={'Hello, '} />
         <Text text={'Fulana de tals'} />
       </UserContainer>
-      <ConfigButton>
+      <ConfigButton onPress={onPressSetings}>
         <FontAwesome5
           color={secondary_text}
           size={fontScale(21)}
