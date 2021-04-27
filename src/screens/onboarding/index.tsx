@@ -17,7 +17,7 @@ import {
 
 import {useSelector} from 'react-redux';
 import OnboardingSteps from './onboardingSteps';
-import {StoreType} from '../../reducers';
+import {StoreType} from '../../redux/reducers';
 import {Sizes} from '../../commons';
 import {useTranslation} from 'react-i18next';
 import {StartScreenProps} from './types';

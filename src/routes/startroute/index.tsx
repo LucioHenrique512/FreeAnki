@@ -1,6 +1,6 @@
 import React from 'react';
 import {StartPage} from '../../screens';
-import {sessionActions} from '../../actions';
+import {sessionActions} from '../../redux/actions';
 import {useDispatch} from 'react-redux';
 
 export default function StartRoute() {
